@@ -34,18 +34,19 @@ D — DISCORD ROLE SYNC + PERMISSIONS
     ✔ .env updated
 
 E — FRONTEND ROLE/PERMISSION INTEGRATION
-    ☐ Role context
-    ☐ Permission context
-    ☐ Protected routes
-    ☐ Hide/show UI elements
-    ☐ “No permission” screens
+    ✔ Role context
+    ✔ Permission helpers (hasPermission on RoleContext)
+    ✔ Protected routes
+    ✔ Hide/show UI elements (sidebar)
+    ✔ “No permission” screens
 
 F — FRONTEND AUTH FLOW UPDATE
-    ☐ Discord OAuth redirect handling
-    ☐ Session/JWT storage
-    ☐ Fetch /api/auth/me on load
-    ☐ Sync roles on login
-    ☐ Credentialed API calls
+    ✔ Discord OAuth redirect handling
+    ✔ Session via cookies
+    ✔ Fetch /api/auth/me on load
+    ✔ Sync roles on login / guild select
+    ✔ Credentialed API calls
+    ✔ Role-based landing routes
 
 G — BOT INTEGRATION
     ☐ guildMemberUpdate → sync roles
@@ -58,7 +59,7 @@ G — BOT INTEGRATION
 H — DASHBOARD UI ENHANCEMENTS
     ☐ Guide editor UI
     ☐ Announcement manager
-    ☐ Moderation logs viewer
+    ✔ Moderation logs viewer (admin live logs)
     ☐ Settings panel
     ☐ User management
     ☐ Navigation polish

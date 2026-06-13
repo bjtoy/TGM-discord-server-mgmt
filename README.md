@@ -1,1 +1,119 @@
-# Grand Mafia Bot - Discord Server Management SystemA powerful Discord bot designed for **The Grand Mafia** faction server, featuring real-time translation, moderation tools, and server management capabilities.## Documentation- **README.md** – Project overview and developer documentation- **USER_README.md** – Moderator and server owner user guide- **QUICKSTART.md** – 5‑minute setup guide## Features### 🌐 Translation* **Multi-language support**: Translate text to and from most languages easily* **Slash command interface**: `/translate text:hello language:es`* **Powered by Google Translate API**: Accurate and reliable translations### 📢 Announcements* **Moderator announcements**: Post formatted announcements to the server* **Customizable channels**: Direct announcements to specific channels* **Embedded formatting**: Professional-looking announcement embeds### ⚔️ Moderation Tools* **Kick members**: Remove users from the server with reasons* **Ban members**: Permanently ban users with audit logs* **Mute users**: Temporary timeouts with customizable duration* **Warn system**: Issue warnings with DM notifications* **Permission-based access**: Only moderators can use moderation commands### 📊 Server Management* **Server info**: View detailed server statistics* **Bot status**: Check bot latency and API response time* **Help system**: Easy-to-use command reference## Installation### Prerequisites* Node.js 18.0 or higher* npm or yarn package manager* Discord Bot Token (from Discord Developer Portal)* Discord Server ID (Guild ID)### Step 1: Clone and Setup```bashcd grand-mafia-botnpm install```### Step 2: Configure Environment Variables1. Copy `.env.example` to `.env`:```bashcp .env.example .env```2. Edit `.env` and add your Discord credentials:```DISCORD\\\\\\\_TOKEN=your\\\\\\\_bot\\\\\\\_token\\\\\\\_hereGUILD\\\\\\\_ID=your\\\\\\\_server\\\\\\\_id\\\\\\\_hereOWNER\\\\\\\_ID=your\\\\\\\_user\\\\\\\_id\\\\\\\_hereMODERATOR\\\\\\\_ROLE\\\\\\\_ID=your\\\\\\\_moderator\\\\\\\_role\\\\\\\_id\\\\\\\_here (optional)ANNOUNCEMENT\\\\\\\_CHANNEL\\\\\\\_ID=your\\\\\\\_announcement\\\\\\\_channel\\\\\\\_id\\\\\\\_here (optional)DEFAULT\\\\\\\_LANGUAGE=en```### Step 3: Get Your Discord IDs#### Discord Bot Token:1. Go to [Discord Developer Portal](https://discord.com/developers/applications)2. Click "New Application"3. Go to "Bot" section and click "Add Bot"4. Copy the token under "TOKEN"5. Enable these Intents:   * Message Content Intent   * Server Members Intent#### Guild ID (Server ID):1. Right-click your Discord server name2. Select "Copy Server ID"#### Your User ID:1. Right-click your Discord username2. Select "Copy User ID"#### Moderator Role ID (Optional):1. Right-click the moderator role2. Select "Copy Role ID"#### Announcement Channel ID (Optional):1. Right-click the announcement channel2. Select "Copy Channel ID"## Running the Bot### Local Development```bashnpm run dev```### Production```bashnpm start```## Available Commands### Translation* `/translate text:<text> language:<code>` - Translate text to a language**Supported language codes**: en, es, fr, de, ja, zh, ru, ar, pt, it, ko, and many more### Announcements* `/announce title:<title> message:<message> channel:<channel\\\\\\\_id>` - Post an announcement### Moderation* `/kick user:<@user> reason:<reason>` - Kick a user* `/ban user:<@user> reason:<reason>` - Ban a user* `/mute user:<@user> duration:<seconds> reason:<reason>` - Mute a user* `/warn user:<@user> reason:<reason>` - Warn a user### Utility* `/help` - Show all available commands* `/ping` - Check bot latency* `/serverinfo` - Display server information## Deployment Options### Option 1: Cloud Computer (Recommended)Deploy on a Manus Cloud Computer for 24/7 uptime:1. Set up a cloud computer at [manus.im](https://manus.im)2. Clone this repository3. Follow the installation steps above4. Use `pm2` or `systemd` to keep the bot running:```bash# Using pm2npm install -g pm2pm2 start src/index.js --name "grand-mafia-bot"pm2 startuppm2 save```### Option 2: Docker DeploymentCreate a `Dockerfile`:```dockerfileFROM node:18-alpineWORKDIR /appCOPY package\\\\\\\*.json ./RUN npm ci --only=productionCOPY src ./srcCMD \\\\\\\["node", "src/index.js"]```Build and run:```bashdocker build -t grand-mafia-bot .docker run -d --name grand-mafia-bot --env-file .env grand-mafia-bot```### Option 3: Heroku Deployment1. Create a `Procfile`:```worker: node src/index.js```2. Deploy:```bashheroku create your-app-nameheroku config:set DISCORD\\\\\\\_TOKEN=your\\\\\\\_tokenheroku config:set GUILD\\\\\\\_ID=your\\\\\\\_guild\\\\\\\_id# ... set other env varsgit push heroku main```### Option 4: Railway.app1. Connect your GitHub repository to Railway2. Add environment variables in Railway dashboard3. Deploy automatically on push## Troubleshooting### Bot not responding to commands* Ensure the bot has proper permissions in your server* Check that Message Content Intent is enabled* Verify the bot token is correct### Translation errors* Ensure you're using valid language codes* Check your internet connection* Verify Google Translate API is accessible### Permission errors* Ensure the bot role is high enough in the role hierarchy* Check channel permissions for the bot* Verify moderator permissions are set correctly## Project Structure```grand-mafia-bot/├── src/│   ├── index.js              # Main bot entry point│   ├── commands/             # Slash commands│   │   ├── translate.js│   │   ├── announce.js│   │   ├── kick.js│   │   ├── ban.js│   │   ├── mute.js│   │   ├── warn.js│   │   ├── help.js│   │   ├── ping.js│   │   └── serverinfo.js│   └── events/               # Event handlers│       ├── ready.js│       └── interactionCreate.js├── package.json├── .env.example└── README.md```## Dependencies* **discord.js**: Discord API wrapper* **google-translate-api-x**: Translation service* **dotenv**: Environment variable management* **axios**: HTTP client (optional, for future API integrations)## ContributingTo add new commands:1. Create a new file in `src/commands/`2. Export a command object with `data` (SlashCommandBuilder) and `execute` function3. The bot will automatically load it on startupExample:```javascriptimport { SlashCommandBuilder } from 'discord.js';export default {  data: new SlashCommandBuilder()    .setName('mycommand')    .setDescription('My custom command'),  async execute(interaction) {    await interaction.reply('Hello!');  },};```## LicenseMIT License - Feel free to use and modify this bot for your faction server.## SupportFor issues or feature requests, please open an issue on the repository or contact the bot maintainer.\---**Grand Mafia Faction Server** - Coordinating excellence in wartime strategy
+# TGM Discord Server Management
+
+Parent repository for the **UnderbossHQ** control panel — Discord OAuth dashboard, Express API, and (future) bot integration for The Grand Mafia server management.
+
+This repo holds **planning docs**, **docker-compose**, and workspace config. Application code lives in separate repositories (cloned into `backend/` and `dashboard/` locally).
+
+## Repositories
+
+| Component | Repository | Deploy |
+|-----------|------------|--------|
+| **Parent (this repo)** | [TGM-discord-server-mgmt](https://github.com/bjtoy/TGM-discord-server-mgmt) | Docs & orchestration |
+| **Backend API** | [backend](https://github.com/bjtoy/backend) | Render / Railway / Docker |
+| **Dashboard (React)** | [tgm-dashboard](https://github.com/bjtoy/tgm-dashboard) | [tgm-dashboard.onrender.com](https://tgm-dashboard.onrender.com) |
+
+## Local development
+
+### Prerequisites
+
+- Node.js 20+
+- PostgreSQL (or Neon) for the backend `DATABASE_URL`
+- Discord application with OAuth2 redirect configured
+
+### 1. Clone all three repos
+
+```bash
+git clone https://github.com/bjtoy/TGM-discord-server-mgmt.git
+cd TGM-discord-server-mgmt
+
+git clone https://github.com/bjtoy/backend.git backend
+git clone https://github.com/bjtoy/tgm-dashboard.git dashboard
+```
+
+### 2. Backend
+
+```bash
+cd backend
+cp .env.example .env
+# Edit .env — see below
+npm install
+npm run dev
+```
+
+Runs on **http://localhost:3000**
+
+### 3. Dashboard
+
+```bash
+cd dashboard
+cp .env.example .env
+# VITE_API_URL=http://localhost:3000
+npm install
+npm run dev
+```
+
+Runs on **http://localhost:5173**
+
+### 4. Discord OAuth redirect URIs
+
+Add these in the [Discord Developer Portal](https://discord.com/developers/applications) → OAuth2 → Redirects:
+
+- Local: `http://localhost:3000/api/auth/callback`
+- Production: your backend callback URL (not the dashboard URL)
+
+### Environment variables (minimum)
+
+**Backend** (`backend/.env`):
+
+| Variable | Example |
+|----------|---------|
+| `PORT` | `3000` |
+| `FRONTEND_URL` | `http://localhost:5173` |
+| `DISCORD_CLIENT_ID` | from Discord portal |
+| `DISCORD_CLIENT_SECRET` | from Discord portal |
+| `DISCORD_CALLBACK_URL` | `http://localhost:3000/api/auth/callback` |
+| `SESSION_SECRET` | random string |
+| `DATABASE_URL` | PostgreSQL connection string |
+| `ADMIN_DISCORD_IDS` | your Discord user ID |
+| `DISCORD_TOKEN` | bot token (optional; enables live guild stats) |
+
+**Dashboard** (`dashboard/.env`):
+
+| Variable | Example |
+|----------|---------|
+| `VITE_API_URL` | `http://localhost:3000` |
+
+Production: set `FRONTEND_URL=https://tgm-dashboard.onrender.com` on the backend and `VITE_API_URL` to your backend URL on the dashboard build.
+
+### Docker (optional)
+
+From this directory:
+
+```bash
+docker compose up --build
+```
+
+- Backend: http://localhost:3000  
+- Dashboard: http://localhost:8080  
+
+Ensure `backend/.env` exists before running compose.
+
+## Project layout
+
+```
+TGM-discord-server-mgmt/
+├── README.md                 ← you are here
+├── docker-compose.yml
+├── UnderbossHQ roadmap.txt   ← full task list
+├── Roadmap ext.txt           ← alphabetical progress tracker
+├── backend/                  ← separate git repo
+└── dashboard/                ← separate git repo
+```
+
+## Roadmap status
+
+See [Roadmap ext.txt](./Roadmap%20ext.txt) for section-by-section progress (auth, roles, bot integration, deployment).
+
+## Security
+
+Never commit `.env` files. They are gitignored in all repos.
