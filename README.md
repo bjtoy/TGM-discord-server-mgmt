@@ -131,41 +131,20 @@ Ensure `backend/.env` exists before running compose.
 ## Project layout
 
 ```
-UnderbossHQ/
-├── README.md                 ← you are here
+UnderbossHQ/                  ← parent repo (open this folder in Cursor)
+├── README.md
 ├── docker-compose.yml
-├── UnderbossHQ roadmap.txt   ← full task list
-├── Roadmap ext.txt           ← alphabetical progress tracker
-├── backend/                  ← separate git repo
-└── dashboard/                ← separate git repo
+├── render.yaml
+├── backend/                  ← separate git repo (API + bot)
+└── dashboard/                ← separate git repo (React UI)
 ```
 
-## Roadmap status
-
-See [Roadmap ext.txt](./Roadmap%20ext.txt) for section-by-section progress (auth, roles, bot integration, deployment).
-
-## Local folder name
-
-The repo folder should be named **`UnderbossHQ`** (not `TGM-discord-server-mgmt`).
-
-If yours still has the old name:
-
-1. **Close Cursor** (this workspace locks the folder).
-2. Run from PowerShell:
-
-```powershell
-cd d:\
-Rename-Item -Path "TGM-discord-server-mgmt" -NewName "UnderbossHQ"
-```
-
-Or run the helper script from `d:\` after closing Cursor:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File "d:\TGM-discord-server-mgmt\rename-local-folder.ps1"
-```
-
-3. Reopen the project: **File → Open Folder → `d:\UnderbossHQ`**
+`docker-compose.yml` and `backend.code-workspace` expect the subfolders to be named **`backend`** and **`dashboard`**. If you renamed them locally, either rename back to match or update those config files.
 
 ## Security
 
 Never commit `.env` files. They are gitignored in all repos.
+
+## Roadmap status
+
+See [Roadmap ext.txt](./Roadmap%20ext.txt) for section-by-section progress (auth, roles, bot integration, deployment).
