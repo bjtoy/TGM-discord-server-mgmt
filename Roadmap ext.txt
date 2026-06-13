@@ -1,5 +1,5 @@
 ██████████████████████████████████████████████████████████████████
-                     TGM DEVELOPMENT ROADMAP
+                     UNDERBOSSHQ DEVELOPMENT ROADMAP
                  (Alphabetical • Full System Plan)
 ██████████████████████████████████████████████████████████████████
 
@@ -64,7 +64,7 @@ H — DASHBOARD UI ENHANCEMENTS
     ✔ Moderation logs viewer (admin live logs)
     ✔ Settings panel
     ☐ User management
-    ☐ Navigation polish
+    ✔ Navigation polish (grouped sidebar + page headers)
 
 I — OPTIONAL FEATURES
     ☐ Invite tracking

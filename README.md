@@ -1,6 +1,6 @@
-# UnderbossHQ — Discord Server Management
+# UnderbossHQ
 
-Parent repository for the **UnderbossHQ** control panel — Discord OAuth dashboard, Express API, and bot integration for Discord server management.
+Parent repository for the **UnderbossHQ** platform — Discord OAuth dashboard, Express API, and bot integration.
 
 This repo holds **planning docs**, **docker-compose**, and workspace config. Application code lives in separate repositories (cloned into `backend/` and `dashboard/` locally).
 
@@ -8,9 +8,11 @@ This repo holds **planning docs**, **docker-compose**, and workspace config. App
 
 | Component | Repository | Deploy |
 |-----------|------------|--------|
-| **Parent (this repo)** | [TGM-discord-server-mgmt](https://github.com/bjtoy/TGM-discord-server-mgmt) | Docs & orchestration |
+| **Parent (this repo)** | [UnderbossHQ](https://github.com/bjtoy/UnderbossHQ) | Docs & orchestration |
 | **Backend API** | [backend](https://github.com/bjtoy/backend) | Render / Railway / Docker |
 | **Dashboard (React)** | [tgm-dashboard](https://github.com/bjtoy/tgm-dashboard) | [tgm-dashboard.onrender.com](https://tgm-dashboard.onrender.com) |
+
+> **Note:** If GitHub still shows the old name `TGM-discord-server-mgmt`, rename it under **Settings → Repository name → `UnderbossHQ`**. GitHub redirects the old URL automatically.
 
 ## Local development
 
@@ -23,8 +25,8 @@ This repo holds **planning docs**, **docker-compose**, and workspace config. App
 ### 1. Clone all three repos
 
 ```bash
-git clone https://github.com/bjtoy/TGM-discord-server-mgmt.git
-cd TGM-discord-server-mgmt
+git clone https://github.com/bjtoy/UnderbossHQ.git
+cd UnderbossHQ
 
 git clone https://github.com/bjtoy/backend.git backend
 git clone https://github.com/bjtoy/tgm-dashboard.git dashboard
@@ -129,7 +131,7 @@ Ensure `backend/.env` exists before running compose.
 ## Project layout
 
 ```
-TGM-discord-server-mgmt/
+UnderbossHQ/
 ├── README.md                 ← you are here
 ├── docker-compose.yml
 ├── UnderbossHQ roadmap.txt   ← full task list
