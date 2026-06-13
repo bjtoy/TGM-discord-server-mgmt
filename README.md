@@ -87,14 +87,17 @@ Add these in the [Discord Developer Portal](https://discord.com/developers/appli
 
 Production: set `FRONTEND_URL=https://tgm-dashboard.onrender.com` on the backend and `VITE_API_URL` to your backend URL on the dashboard build.
 
-See [render.yaml](./render.yaml) for a Render blueprint. Production checklist:
+See [render.yaml](./render.yaml) for the Render blueprint and **[LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md)** for the full Section L deployment guide.
 
-1. Backend `NODE_ENV=production` (required for cross-origin cookies)
-2. Backend `startCommand`: `npx prisma migrate deploy && npm start`
-3. Dashboard build env: `VITE_API_URL=https://<backend-host>`
-4. Discord OAuth redirect: `https://<backend-host>/api/auth/callback`
-5. Backend `DISCORD_TOKEN` for live kick/ban, guild stats, and the bot worker
-6. Dashboard static site: SPA fallback via `dashboard/public/_redirects`
+Quick production checklist:
+
+1. Push latest `backend` and `dashboard` to GitHub
+2. Render: backend `startCommand` → `npm run start:deploy`, health check `/api/health`
+3. Render: dashboard build env `VITE_API_URL=https://<backend-host>`
+4. Set all backend secrets (see LAUNCH_CHECKLIST.md)
+5. Discord OAuth redirect: `https://<backend-host>/api/auth/callback`
+6. After deploy: `cd backend && npm run deploy-commands`
+7. Monitor: `node scripts/monitor-health.js https://<backend-host> --watch`
 
 ### Discord bot worker
 
@@ -133,8 +136,11 @@ Ensure `backend/.env` exists before running compose.
 ```
 UnderbossHQ/                  ← parent repo (open this folder in Cursor)
 ├── README.md
+├── LAUNCH_CHECKLIST.md       ← Section L deploy checklist
+├── DEPLOYMENT_GUIDE.md
 ├── docker-compose.yml
 ├── render.yaml
+├── scripts/monitor-health.js
 ├── backend/                  ← separate git repo (API + bot)
 └── dashboard/                ← separate git repo (React UI)
 ```

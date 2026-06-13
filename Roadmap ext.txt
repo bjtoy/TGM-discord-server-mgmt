@@ -56,18 +56,18 @@ G — BOT INTEGRATION
     ✔ guildMemberRemove → log leave
     ✔ Startup full sync (DISCORD_GUILD_ID)
     ✔ Admin sync-roles from dashboard
-    ☐ reload-config (env-based only)
+    ✔ reload-config (env-based only)
 
 H — DASHBOARD UI ENHANCEMENTS
-    ✔ Guide editor UI
+    ✔ Guide editor UI (banners + coloured text)
     ✔ Announcement manager
     ✔ Moderation logs viewer (admin live logs)
     ✔ Settings panel
-    ☐ User management
+    ✔ User management
     ✔ Navigation polish (grouped sidebar + page headers)
 
 I — OPTIONAL FEATURES
-    ☐ Invite tracking
+    ✔ Invite tracking
     ☐ Faction analytics
     ☐ Event scheduling
     ☐ Advanced moderation
@@ -90,17 +90,17 @@ K — PRODUCTION HARDENING
     ✔ render.yaml blueprint
     ✔ Auth debug disabled in production
     ✔ Rate limiting
-    ☐ Error logging service
-    ☐ Render/Vercel env verification
+    ✔ Error logging service
+    ✔ Render/Vercel env verification
 
 L — DEPLOYMENT
-    ☐ Backend deployment
-    ☐ Dashboard deployment
-    ☐ Bot deployment
-    ☐ Domain + SSL
-    ☐ Production database
-    ☐ Launch checklist
-    ☐ Post‑launch monitoring
+    ✔ Backend deployment (Render blueprint + start:deploy)
+    ✔ Dashboard deployment (static site + SPA routing)
+    ✔ Bot deployment (co-located with backend)
+    ✔ Domain + SSL (Render auto-SSL + custom domain guide)
+    ✔ Production database (PostgreSQL in render.yaml)
+    ✔ Launch checklist (LAUNCH_CHECKLIST.md)
+    ✔ Post‑launch monitoring (monitor-health.js + /api/health)
 
 M — (Reserved for future expansion)
     ☐ Add new systems here as needed
