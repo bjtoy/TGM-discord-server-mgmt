@@ -1,0 +1,356 @@
+Section F — API integration & UI components (Cursor Agent workflow)
+Agent implements in repo; F1–F20 are core, F21+ are optional polish — see ✅ Your rules (locked in).txt
+
+⭐ Next in the alphabet is:
+F — API Integration (Frontend ↔ Backend)
+This is where your dashboard stops being a pretty face and starts pulling real data from your backend.
+
+Here’s what Section F typically includes:
+
+⭐ F1 — Create a reusable API helper (api.js)
+Handles:
+
+GET requests
+
+POST requests
+
+Auth headers
+
+Error handling
+
+Auto‑redirect on 401
+
+⭐ F2 — Connect the frontend to your backend routes
+Examples:
+
+/api/user/me
+
+/api/admin/stats
+
+/api/mod/reports
+
+/api/member/profile
+
+⭐ F3 — Replace placeholder values with real data
+All those “—” values in your cards become live numbers.
+
+⭐ F4 — Add loading + error states
+Your cards will show:
+
+“Loading…”
+
+“Error fetching data”
+
+Real values
+
+⭐ F5 — Add protected API calls based on roles
+Admins can hit admin endpoints
+Mods can hit mod endpoints
+Members get member endpoints
+
+⭐ F6 — Add a global API error handler
+If the backend returns:
+
+401 → redirect to login
+
+403 → redirect to NotAuthorized
+
+500 → show error card
+
+⭐ F7 — Add a reusable <Loader /> component
+Red neon spinner, mafia‑style.
+
+⭐ F8 — Add a reusable <ErrorCard /> component
+Matches your .card styling.
+
+⭐ F9 — Update dashboards to use real API data
+MemberHome → profile, tasks, faction
+
+ModDashboard → reports, cases
+
+AdminDashboard → users, logs, system status
+
+⭐ F10 — Add a global refresh function
+So dashboards can refresh data without reloading the page.
+
+⭐ F11 — Add a “Last Updated” timestamp
+Displayed in the corner of each dashboard.
+
+⭐ F12 — Add a backend health check
+Dashboard shows:
+
+🟢 Online
+
+🟡 Degraded
+
+🔴 Offline
+
+⭐ F13 — Add a global toast/notification system
+Red glow notifications for:
+
+Success
+
+Warning
+
+Error
+
+⭐ F14 — Add a reusable <Section> component
+For grouping dashboard content.
+
+⭐ F15 — Add a reusable <StatCard> component
+For your number cards.
+
+⭐ F16 — Add a reusable <ActionButton> component
+Styled with .btn but cleaner.
+
+⭐ F17 — Add a reusable <PageTitle> component
+Uses Goldrops font.
+
+⭐ F18 — Add a reusable <Grid> component
+Wraps .dashboard-grid.
+
+⭐ F19 — Add a reusable <Card> component
+Wraps .card.
+
+⭐ F20 — Add a reusable <Panel> component
+For larger content blocks.
+
+⭐ F21 — Add a reusable <Input> component
+Styled with your theme.
+
+⭐ F22 — Add a reusable <Form> component
+For admin tools.
+
+⭐ F23 — Add a reusable <Modal> component
+Red glow modal for admin/mod actions.
+
+⭐ F24 — Add a reusable <ConfirmDialog>
+For dangerous actions.
+
+⭐ F25 — Add a reusable <Table> component
+For logs, reports, user lists.
+
+⭐ F26 — Add a reusable <Pagination> component
+For large datasets.
+
+⭐ F27 — Add a reusable <SearchBar> component
+Styled with your inputs.
+
+⭐ F28 — Add a reusable <FilterBar> component
+For mod/admin tools.
+
+⭐ F29 — Add a reusable <Badge> component
+For roles, statuses, etc.
+
+⭐ F30 — Add a reusable <Avatar> component
+For Discord profile pictures.
+
+⭐ F31 — Add a reusable <UserCard> component
+For admin user management.
+
+⭐ F32 — Add a reusable <ReportCard> component
+For mod tools.
+
+⭐ F33 — Add a reusable <SystemStatusCard>
+For admin system health.
+
+⭐ F34 — Add a reusable <DashboardSection>
+For grouping content.
+
+⭐ F35 — Add a reusable <DashboardPage> wrapper
+For consistent layout.
+
+⭐ F36 — Add a reusable <EmptyState> component
+For when no data exists.
+
+⭐ F37 — Add a reusable <ErrorState> component
+For failed API calls.
+
+⭐ F38 — Add a reusable <LoadingState> component
+Red neon spinner.
+
+⭐ F39 — Add a reusable <RefreshButton>
+To reload dashboard data.
+
+⭐ F40 — Add a reusable <Timestamp> component
+Shows last updated time.
+
+⭐ F41 — Add a reusable <Divider> component
+Styled horizontal line.
+
+⭐ F42 — Add a reusable <Spacer> component
+For spacing.
+
+⭐ F43 — Add a reusable <Flex> component
+For layout.
+
+⭐ F44 — Add a reusable <GridItem> component
+For dashboard cards.
+
+⭐ F45 — Add a reusable <RoleBadge>
+For Admin / Mod / Member.
+
+⭐ F46 — Add a reusable <DangerButton>
+Red glow destructive action.
+
+⭐ F47 — Add a reusable <SuccessButton>
+Green glow success.
+
+⭐ F48 — Add a reusable <WarningButton>
+Yellow glow warning.
+
+⭐ F49 — Add a reusable <InfoButton>
+Blue glow info.
+
+⭐ F50 — Add a reusable <Toggle> component
+For settings.
+
+⭐ F51 — Add a reusable <Switch> component
+Styled toggle switch.
+
+⭐ F52 — Add a reusable <Checkbox> component
+Styled with your theme.
+
+⭐ F53 — Add a reusable <Radio> component
+Styled with your theme.
+
+⭐ F54 — Add a reusable <Select> component
+Styled dropdown.
+
+⭐ F55 — Add a reusable <Tabs> component
+For multi‑section admin tools.
+
+⭐ F56 — Add a reusable <TabPanel>
+For tab content.
+
+⭐ F57 — Add a reusable <Accordion>
+For collapsible sections.
+
+⭐ F58 — Add a reusable <AccordionItem>
+For each collapsible item.
+
+⭐ F59 — Add a reusable <Toast> system
+Red glow notifications.
+
+⭐ F60 — Add a reusable <ToastProvider>
+Global notification context.
+
+⭐ F61 — Add a reusable <ThemeProvider>
+If you want theme switching later.
+
+⭐ F62 — Add a reusable <APIProvider>
+For global API state.
+
+⭐ F63 — Add a reusable <UserProvider>
+For user profile data.
+
+⭐ F64 — Add a reusable <ReportProvider>
+For mod tools.
+
+⭐ F65 — Add a reusable <AdminProvider>
+For admin tools.
+
+⭐ F66 — Add a reusable <HealthProvider>
+For system status.
+
+⭐ F67 — Add a reusable <DashboardProvider>
+For dashboard‑wide state.
+
+⭐ F68 — Add a reusable <RefreshContext>
+For global refresh triggers.
+
+⭐ F69 — Add a reusable <APIErrorBoundary>
+Catches API errors.
+
+⭐ F70 — Add a reusable <DashboardErrorBoundary>
+Catches dashboard errors.
+
+⭐ F71 — Add a reusable <PageErrorBoundary>
+Catches page‑level errors.
+
+⭐ F72 — Add a reusable <RetryButton>
+For retrying failed API calls.
+
+⭐ F73 — Add a reusable <LoadingOverlay>
+Full‑screen loading.
+
+⭐ F74 — Add a reusable <ModalOverlay>
+For modals.
+
+⭐ F75 — Add a reusable <Backdrop>
+For dimming background.
+
+⭐ F76 — Add a reusable <KeyboardShortcuts>
+For power‑users.
+
+⭐ F77 — Add a reusable <Hotkey> component
+For individual shortcuts.
+
+⭐ F78 — Add a reusable <DebugPanel>
+For dev mode.
+
+⭐ F79 — Add a reusable <Logger>
+For admin logs.
+
+⭐ F80 — Add a reusable <AuditLogTable>
+For admin audit logs.
+
+⭐ F81 — Add a reusable <ReportTable>
+For mod reports.
+
+⭐ F82 — Add a reusable <UserTable>
+For admin user management.
+
+⭐ F83 — Add a reusable <UserEditor>
+For editing users.
+
+⭐ F84 — Add a reusable <RoleEditor>
+For assigning roles.
+
+⭐ F85 — Add a reusable <PermissionEditor>
+For advanced admin tools.
+
+⭐ F86 — Add a reusable <SystemMonitor>
+For backend health.
+
+⭐ F87 — Add a reusable <ServerStatusCard>
+For server uptime.
+
+⭐ F88 — Add a reusable <MemoryUsageCard>
+For backend memory.
+
+⭐ F89 — Add a reusable <CPULoadCard>
+For backend CPU.
+
+⭐ F90 — Add a reusable <DatabaseStatusCard>
+For DB health.
+
+⭐ F91 — Add a reusable <CacheStatusCard>
+For Redis/cache.
+
+⭐ F92 — Add a reusable <QueueStatusCard>
+For job queues.
+
+⭐ F93 — Add a reusable <ServiceStatusCard>
+For microservices.
+
+⭐ F94 — Add a reusable <EnvironmentInfo>
+For environment variables.
+
+⭐ F95 — Add a reusable <VersionInfo>
+For backend version.
+
+⭐ F96 — Add a reusable <Changelog>
+For updates.
+
+⭐ F97 — Add a reusable <AdminToolsPanel>
+For all admin tools.
+
+⭐ F98 — Add a reusable <ModToolsPanel>
+For mod tools.
+
+⭐ F99 — Add a reusable <MemberToolsPanel>
+For member tools.
+
+⭐ F100 — Add a reusable <DashboardFooter>
+For footer info.

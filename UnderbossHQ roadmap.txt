@@ -1,0 +1,325 @@
+TGM Dashboard — Complete Development Roadmap
+
+This document consolidates all remaining tasks, backend tasks, frontend tasks, and bot integration tasks into one unified roadmap. It also includes all items from your attached documents and adds any missing components required for a fully functional production system.
+
+──────────────────────────────────────────────────────────────────
+DEVELOPMENT WORKFLOW (Cursor Agent)
+──────────────────────────────────────────────────────────────────
+
+Work at agent pace — you assist when needed (credentials, testing, deploy).
+
+Full notes: ✅ Your rules (locked in).txt
+
+──────────────────────────────────────────────────────────────────
+
+1. FRONTEND — AUTH, ROLES & DASHBOARD
+
+1.1 Fix Login Flow (Critical)
+
+Repair AuthCallback.jsx redirect logic
+
+Ensure token/session is stored correctly
+
+Fetch /api/auth/me on load
+
+Redirect to /select-guild
+
+Redirect to dashboard based on role
+
+1.2 Fix Login Page Styling
+
+Apply global fonts
+
+Apply correct theme colors
+
+Ensure login page does not use DashboardLayout
+
+1.3 Role & Permission Context
+
+Implement RoleContext.jsx
+
+Implement PermissionContext.jsx
+
+Load roles from backend
+
+Store roles in context
+
+Expose helper functions: hasRole(), hasPermission()
+
+1.4 Protected Routes
+
+Member → /member
+
+Moderator → /moderator
+
+Admin → /admin
+
+Add fallback: /not-authorized
+
+1.5 Dashboard Layout Integration
+
+Sidebar.jsx (complete)
+
+DashboardLayout.jsx (complete)
+
+Ensure layout wraps ONLY dashboard pages
+
+1.6 Frontend API Integration
+
+Add to api.js:
+
+api.bot.mod.*
+
+api.bot.admin.*
+
+api.bot.logs.*
+
+All requests use credentials: "include"
+
+2. FRONTEND — MODERATOR SYSTEM
+
+2.1 New Components
+
+ActiveCases.jsx
+
+WarningsList.jsx
+
+UserLookup.jsx
+
+ModerationActions.jsx
+
+CaseHistory.jsx
+
+2.2 New Pages
+
+/moderator/cases
+
+/moderator/warnings
+
+/moderator/actions
+
+2.3 UI Enhancements
+
+Case cards
+
+User avatars
+
+Discord tag formatting
+
+Timestamp formatting
+
+Role badges
+
+Confirmation modals
+
+3. FRONTEND — ADMIN SYSTEM
+
+3.1 New Components
+
+BotStatusCard.jsx
+
+GuildInfoCard.jsx
+
+RoleSyncCard.jsx
+
+ConfigReloadCard.jsx
+
+3.2 New Pages
+
+/admin/bot
+
+/admin/guild
+
+/admin/system
+
+3.3 Live Logs Viewer
+
+WebSocket or polling
+
+Filters (mod actions, bot events, errors)
+
+Search
+
+Pagination
+
+Page: /admin/logs
+
+4. BACKEND — BOT API ENDPOINTS
+
+4.1 Moderator Endpoints
+
+GET /bot/mod/overview
+
+GET /bot/mod/active-cases
+
+GET /bot/mod/warnings/:userId
+
+POST /bot/mod/warn
+
+POST /bot/mod/mute
+
+POST /bot/mod/kick
+
+POST /bot/mod/ban
+
+4.2 Admin Endpoints
+
+GET /bot/admin/status
+
+GET /bot/admin/guild-info
+
+POST /bot/admin/reload-config
+
+POST /bot/admin/sync-roles
+
+4.3 Shared Endpoints
+
+GET /bot/logs/recent
+
+GET /bot/logs/cases
+
+5. BACKEND — ROUTES (SECTION D COMPLETION)
+
+Completed
+
+guides.js
+
+announcements.js
+
+moderation.js
+
+settings.js
+
+guide_versions.js (partial)
+
+Still Required
+
+Finish guide_versions.js (remaining half)
+
+Rewrite routes/users.js
+
+Rewrite routes/members.js
+
+Rewrite routes/logs.js
+
+Rewrite routes/auth.js (final OAuth cleanup)
+
+6. BOT INTEGRATION
+
+6.1 Role Sync Engine
+
+guildMemberUpdate → sync roles
+
+guildMemberAdd → create member
+
+guildMemberRemove → mark inactive
+
+Startup full sync
+
+6.2 Moderation Actions
+
+warn
+
+mute
+
+kick
+
+ban
+
+delete message
+
+6.3 Slash Commands
+
+/warn
+
+/mute
+
+/kick
+
+/ban
+
+/case
+
+/lookup
+
+7. DATABASE — REMAINING STRUCTURE
+
+7.1 Required Tables
+
+moderation_logs
+
+bot_logs
+
+settings
+
+guide_versions (already exists)
+
+announcements (already exists)
+
+7.2 Optional Enhancements
+
+invite_tracking
+
+faction_analytics
+
+event_scheduling
+
+8. UI ENHANCEMENTS (GLOBAL)
+
+Neon‑red log levels
+
+Animated transitions
+
+Better card layouts
+
+Mobile sidebar
+
+Dark mode polish
+
+9. PRODUCTION HARDENING
+
+CORS rules
+
+HTTPS enforcement
+
+Secure cookies
+
+Rate limiting
+
+Error logging
+
+Production .env
+
+Render/Vercel config
+
+10. DEPLOYMENT CHECKLIST
+
+Backend deployed
+
+Dashboard deployed
+
+Bot deployed
+
+Domain + SSL
+
+Production database
+
+Launch checklist
+
+Post‑launch monitoring
+
+11. OPTIONAL FUTURE SYSTEMS
+
+Premium memberships
+
+Faction subscriptions
+
+Creator marketplace
+
+Premium bot commands
+
+Merch store
+
+AI tools
+
+END OF DOCUMENT

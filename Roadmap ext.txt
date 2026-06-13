@@ -1,0 +1,106 @@
+██████████████████████████████████████████████████████████████████
+                     TGM DEVELOPMENT ROADMAP
+                 (Alphabetical • Full System Plan)
+██████████████████████████████████████████████████████████████████
+
+WORKFLOW: Cursor Agent — work at agent pace; you assist when needed (see ✅ Your rules (locked in).txt)
+
+A — DATABASE STRUCTURE
+    ✔ Tables created
+    ✔ Relationships defined
+    ✔ Production‑ready
+
+B — BACKEND FOUNDATIONS
+    ✔ Express app
+    ✔ Middleware
+    ✔ OAuth2 login
+    ✔ Sessions / JWT
+    ✔ DB connection
+
+C — BASIC ROUTES
+    ✔ Members
+    ✔ Guides
+    ✔ Announcements
+    ✔ Settings
+    ✔ Moderation
+    ✔ Users
+
+D — DISCORD ROLE SYNC + PERMISSIONS
+    ✔ Role Sync Engine
+    ✔ File‑based permissions
+    ✔ Auth middleware rewrite
+    ✔ All routes updated
+    ✔ index.js + app.js updated
+    ✔ .env updated
+
+E — FRONTEND ROLE/PERMISSION INTEGRATION
+    ☐ Role context
+    ☐ Permission context
+    ☐ Protected routes
+    ☐ Hide/show UI elements
+    ☐ “No permission” screens
+
+F — FRONTEND AUTH FLOW UPDATE
+    ☐ Discord OAuth redirect handling
+    ☐ Session/JWT storage
+    ☐ Fetch /api/auth/me on load
+    ☐ Sync roles on login
+    ☐ Credentialed API calls
+
+G — BOT INTEGRATION
+    ☐ guildMemberUpdate → sync roles
+    ☐ guildMemberAdd → create member
+    ☐ guildMemberRemove → mark inactive
+    ☐ Startup full sync
+    ☐ Moderation actions (mute/warn/delete)
+    ☐ Slash commands
+
+H — DASHBOARD UI ENHANCEMENTS
+    ☐ Guide editor UI
+    ☐ Announcement manager
+    ☐ Moderation logs viewer
+    ☐ Settings panel
+    ☐ User management
+    ☐ Navigation polish
+
+I — OPTIONAL FEATURES
+    ☐ Invite tracking
+    ☐ Faction analytics
+    ☐ Event scheduling
+    ☐ Advanced moderation
+    ☐ Webhooks
+    ☐ AI tools
+
+J — MONETIZATION SYSTEM
+    ☐ Premium memberships
+    ☐ One‑time purchases
+    ☐ Faction subscriptions
+    ☐ Creator marketplace
+    ☐ Premium bot commands
+    ☐ Affiliate integrations
+    ☐ Merch store
+
+K — PRODUCTION HARDENING
+    ☐ CORS rules
+    ☐ HTTPS enforcement
+    ☐ Secure cookies
+    ☐ Rate limiting
+    ☐ Error logging
+    ☐ Production .env
+    ☐ Render/Vercel config
+
+L — DEPLOYMENT
+    ☐ Backend deployment
+    ☐ Dashboard deployment
+    ☐ Bot deployment
+    ☐ Domain + SSL
+    ☐ Production database
+    ☐ Launch checklist
+    ☐ Post‑launch monitoring
+
+M — (Reserved for future expansion)
+    ☐ Add new systems here as needed
+
+██████████████████████████████████████████████████████████████████
+                         END OF ROADMAP
+██████████████████████████████████████████████████████████████████

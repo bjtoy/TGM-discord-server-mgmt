@@ -1,0 +1,30 @@
+✅ Development workflow (Cursor Agent)
+
+Work at agent pace — you step in when needed (credentials, decisions, local testing).
+
+──────────────────────────────────────────────────────────────────
+HOW WE WORK
+──────────────────────────────────────────────────────────────────
+
+• Agent reads and edits the repo directly — no file uploads or paste-and-replace
+• Agent may change several related files in one pass for a single feature
+• Agent runs builds/tests when useful
+• Commits and pushes only when you ask
+• You review diffs in Cursor and help with .env / Discord secrets / deployment
+
+──────────────────────────────────────────────────────────────────
+PRIORITY (fix the app)
+──────────────────────────────────────────────────────────────────
+
+1. Auth + guild selection + role-aware routes
+2. Live API data on every dashboard page
+3. Bot integration (real guild stats, moderation via Discord)
+4. Production deploy hardening
+
+Roadmaps: UnderbossHQ roadmap.txt, Roadmap ext.txt
+
+──────────────────────────────────────────────────────────────────
+LEGACY DOCS
+──────────────────────────────────────────────────────────────────
+
+real f task list.txt and roadmap&rules.txt are old ChatGPT transcripts — reference only.

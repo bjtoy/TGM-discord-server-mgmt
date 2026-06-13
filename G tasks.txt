@@ -1,0 +1,117 @@
+Section G — Bot API & dashboard expansion (Cursor Agent workflow)
+Agent implements these directly in backend/ and dashboard/ — see ✅ Your rules (locked in).txt
+
+G1 — Backend Bot API Endpoints
+We create the backend endpoints your frontend will call:
+
+Moderator endpoints
+GET /bot/mod/overview → live mod stats
+
+GET /bot/mod/active-cases
+
+GET /bot/mod/warnings/:userId
+
+POST /bot/mod/warn
+
+POST /bot/mod/mute
+
+POST /bot/mod/kick
+
+POST /bot/mod/ban
+
+Admin endpoints
+GET /bot/admin/status
+
+GET /bot/admin/guild-info
+
+POST /bot/admin/reload-config
+
+POST /bot/admin/sync-roles
+
+Shared endpoints
+GET /bot/logs/recent
+
+GET /bot/logs/cases
+
+These will be protected by your session + role system.
+
+G2 — Frontend API Integration
+We update your api.js to include:
+
+api.bot.mod.*
+
+api.bot.admin.*
+
+api.bot.logs.*
+
+All using credentials: "include".
+
+G3 — Moderator Dashboard Expansion
+Your current ModDashboard is just stats.
+We expand it into a full moderation suite:
+
+New components:
+ActiveCases.jsx
+
+WarningsList.jsx
+
+UserLookup.jsx
+
+ModerationActions.jsx (warn/mute/kick/ban UI)
+
+CaseHistory.jsx
+
+New pages:
+/moderator/cases
+
+/moderator/warnings
+
+/moderator/actions
+
+G4 — Admin Dashboard Expansion
+Your AdminDashboard becomes a bot control panel:
+
+New components:
+BotStatusCard.jsx
+
+GuildInfoCard.jsx
+
+RoleSyncCard.jsx
+
+ConfigReloadCard.jsx
+
+New pages:
+/admin/bot
+
+/admin/guild
+
+/admin/system
+
+G5 — Live Logs Viewer
+A real‑time log viewer:
+
+WebSocket or polling
+
+Filters (mod actions, bot events, errors)
+
+Search
+
+Pagination
+
+Page:
+/admin/logs (already in your sidebar)
+
+G6 — UI Enhancements
+Neon‑red log levels
+
+Case cards
+
+User avatars
+
+Discord tag formatting
+
+Timestamp formatting
+
+Role badges
+
+Action buttons with confirmation modals

@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets
+.env
+.env.local
+.env.production
+*.env
+
+# Build output
+dist/
+build/
+dist-ssr/
+
+# Archives (local backups)
+*.zip
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Prisma generated
+.prisma/
+prisma/client/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Misc
+*.local
