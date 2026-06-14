@@ -68,9 +68,9 @@ H — DASHBOARD UI ENHANCEMENTS
 
 I — OPTIONAL FEATURES
     ✔ Invite tracking
-    ☐ Faction analytics
-    ☐ Event scheduling
-    ☐ Advanced moderation
+    ✔ Faction analytics
+    ✔ Event scheduling
+    ✔ Advanced moderation
     ☐ Webhooks
     ☐ AI tools
 
