@@ -72,7 +72,7 @@ I — OPTIONAL FEATURES
     ✔ Event scheduling
     ✔ Advanced moderation
     ✔ Webhooks
-    ☐ AI tools
+    ✔ AI tools
 
 J — MONETIZATION SYSTEM
     ☐ Premium memberships
