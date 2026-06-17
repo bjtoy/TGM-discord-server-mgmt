@@ -9,10 +9,8 @@ This repo holds **planning docs**, **docker-compose**, and workspace config. App
 | Component | Repository | Deploy |
 |-----------|------------|--------|
 | **Parent (this repo)** | [UnderbossHQ](https://github.com/bjtoy/UnderbossHQ) | Docs & orchestration |
-| **Backend API** | [backend](https://github.com/bjtoy/backend) | Render / Railway / Docker |
-| **Dashboard (React)** | [tgm-dashboard](https://github.com/bjtoy/tgm-dashboard) | [tgm-dashboard.onrender.com](https://tgm-dashboard.onrender.com) |
-
-> **Note:** If GitHub still shows the old name `TGM-discord-server-mgmt`, rename it under **Settings → Repository name → `UnderbossHQ`**. GitHub redirects the old URL automatically.
+| **Backend API** | [UnderbossHQ-backend](https://github.com/bjtoy/UnderbossHQ-backend) | [underbosshq-backend.onrender.com](https://underbosshq-api-hp8b.onrender.com) |
+| **Dashboard (React)** | [UnderbossHQ-dashboard](https://github.com/bjtoy/UnderbossHQ-dashboard) | [underbosshq-two.vercel.app](https://underbosshq-two.vercel.app) |
 
 ## Local development
 
@@ -28,8 +26,8 @@ This repo holds **planning docs**, **docker-compose**, and workspace config. App
 git clone https://github.com/bjtoy/UnderbossHQ.git
 cd UnderbossHQ
 
-git clone https://github.com/bjtoy/backend.git backend
-git clone https://github.com/bjtoy/tgm-dashboard.git dashboard
+git clone https://github.com/bjtoy/UnderbossHQ-backend.git backend
+git clone https://github.com/bjtoy/UnderbossHQ-dashboard.git dashboard
 ```
 
 ### 2. Backend
@@ -85,7 +83,7 @@ Add these in the [Discord Developer Portal](https://discord.com/developers/appli
 |----------|---------|
 | `VITE_API_URL` | `http://localhost:3000` |
 
-Production: set `FRONTEND_URL=https://tgm-dashboard.onrender.com` on the backend and `VITE_API_URL` to your backend URL on the dashboard build.
+Production: set `FRONTEND_URL=https://underbosshq-two.vercel.app` on the backend and `VITE_API_URL=https://underbosshq-api-hp8b.onrender.com` on the dashboard build.
 
 See [render.yaml](./render.yaml) for the Render blueprint and **[LAUNCH_CHECKLIST.md](./LAUNCH_CHECKLIST.md)** for the full Section L deployment guide.
 

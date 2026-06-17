@@ -37,7 +37,7 @@ Expect `"database": "connected"`.
 | `PORT` | `3000` |
 | `DATABASE_URL` | PostgreSQL connection string |
 | `SESSION_SECRET` | 32+ random characters |
-| `FRONTEND_URL` | `https://tgm-dashboard.onrender.com` (or your dashboard URL) |
+| `FRONTEND_URL` | `https://underbosshq-two.vercel.app` (or your dashboard URL) |
 | `DISCORD_CLIENT_ID` | Discord Developer Portal |
 | `DISCORD_CLIENT_SECRET` | Discord Developer Portal |
 | `DISCORD_CALLBACK_URL` | `https://<backend-host>/api/auth/callback` |
@@ -167,9 +167,9 @@ node scripts/monitor-health.js https://<backend-host>
 
 | Service | Default Render URL |
 |---------|-------------------|
-| Dashboard | https://tgm-dashboard.onrender.com |
-| Backend | https://tgm-backend.onrender.com |
-| Health | https://tgm-backend.onrender.com/api/health |
+| Dashboard | https://underbosshq-two.vercel.app |
+| Backend | https://underbosshq-api-hp8b.onrender.com |
+| Health | https://underbosshq-api-hp8b.onrender.com/api/health |
 
 Replace with your actual service URLs if renamed.
 

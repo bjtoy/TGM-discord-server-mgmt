@@ -23,7 +23,7 @@ databases:
 services:
   # Backend API + Discord bot worker (bot starts when DISCORD_TOKEN is set)
   - type: web
-    name: tgm-backend
+    name: underbosshq-backend
     runtime: node
     rootDir: backend
     plan: free
@@ -40,13 +40,15 @@ services:
           name: underbosshq-db
           property: connectionString
       - key: FRONTEND_URL
-        value: https://tgm-dashboard.onrender.com
+        # Use your live dashboard URL (Vercel or Render static site)
+        value: https://underbosshq-two.vercel.app
       - key: DISCORD_CALLBACK_URL
-        value: https://tgm-backend.onrender.com/api/auth/callback
+        # Must match your live backend URL + /api/auth/callback
+        value: https://underbosshq-api-hp8b.onrender.com/api/auth/callback
 
-  # React dashboard (static site)
+  # React dashboard (static site) — optional; dashboard may also deploy on Vercel
   - type: web
-    name: tgm-dashboard
+    name: underbosshq-dashboard
     runtime: static
     rootDir: dashboard
     buildCommand: npm install && npm run build
@@ -61,4 +63,4 @@ services:
         destination: /index.html
     envVars:
       - key: VITE_API_URL
-        value: https://tgm-backend.onrender.com
+        value: https://underbosshq-api-hp8b.onrender.com

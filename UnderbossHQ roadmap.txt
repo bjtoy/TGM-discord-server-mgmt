@@ -1,4 +1,4 @@
-TGM Dashboard — Complete Development Roadmap
+UnderbossHQ Dashboard — Complete Development Roadmap
 
 This document consolidates all remaining tasks, backend tasks, frontend tasks, and bot integration tasks into one unified roadmap. It also includes all items from your attached documents and adds any missing components required for a fully functional production system.
 

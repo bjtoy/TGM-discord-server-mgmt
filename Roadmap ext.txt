@@ -75,7 +75,7 @@ I — OPTIONAL FEATURES
     ✔ AI tools
 
 J — MONETIZATION SYSTEM
-    ☐ Premium memberships
+    ✔ Premium memberships (manual grant + AI gating; Stripe TBD)
     ☐ One‑time purchases
     ☐ Faction subscriptions
     ☐ Creator marketplace

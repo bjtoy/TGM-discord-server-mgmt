@@ -3,9 +3,9 @@
  * Post-launch health monitor for UnderbossHQ backend.
  *
  * Usage:
- *   node scripts/monitor-health.js https://tgm-backend.onrender.com
- *   node scripts/monitor-health.js https://tgm-backend.onrender.com --watch
- *   node scripts/monitor-health.js https://tgm-backend.onrender.com --watch --interval 300
+ *   node scripts/monitor-health.js https://underbosshq-api-hp8b.onrender.com
+ *   node scripts/monitor-health.js https://underbosshq-api-hp8b.onrender.com --watch
+ *   node scripts/monitor-health.js https://underbosshq-api-hp8b.onrender.com --watch --interval 300
  */
 
 const args = process.argv.slice(2);

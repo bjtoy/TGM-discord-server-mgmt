@@ -251,7 +251,7 @@ Group channels by access level:
 
 **Member Channels** (Members & above):
 - faction-announcements
-- tgm-updates
+- underbosshq-updates
 - redeem-codes
 
 **Restricted Channels** (Specific roles):
